@@ -1,11 +1,12 @@
 const express= require('express');
-const {createUser, login,} = require('../controllers/auth.controller');
-
+const {updateUser,
+    deleteUser,
+    createStudent,
+    getAllUsers} = require('../controllers/user.controller')
 const router = express.Router();
 
-
-router.route('/signup').post(createUser);
-router.route('/login').post(login);
+router.route('/').get(getAllUsers).post(createStudent);
+router.route('/:userId').patch(updateUser).delete(deleteUser);
 
 
 module.exports = router;

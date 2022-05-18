@@ -11,7 +11,7 @@ const auth = async (req, res, next) => {
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET)
     // attach the user to the job routes
-    req.user = { email: payload.email, name: payload.name }
+    req.user = { id: payload.id, }
     next()
   } catch (error) {
     throw new Error('Authentication invalid')
