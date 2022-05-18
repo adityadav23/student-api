@@ -63,16 +63,3 @@ userSchema.methods.createJWT = async function(id){
     return token;
 }
 module.exports = mongoose.model('User',userSchema);
-
-
-// 1. Make an admin user manually in the database, and create JWD token for authorisation so that only admin can create the record in the database and access the database
-// 3. Create student record : in which admin can create student record by sending student name, email id and mobile number and autogenerate timestamp.
-//     1. Validate the user name with 4-25 character only no digits or special character allowed 
-//     2. Validate the email id by proper email id format
-//     3. Mobile number can have only 10 digits only, no character or special character allowed, mobile number should be unique in the database
-
-// 4. Fetch all User: in which we can list the all the stored user
-// 5. Delete any selected user
-// 6. Edit any selected user ( with all validations)
-// 7. Test your API in Postman to validate your Work
-// 8. Publish your API on some testing server so that we can test form your given endpoints.
